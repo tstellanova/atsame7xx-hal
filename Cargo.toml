@@ -1,0 +1,20 @@
+[package]
+name = "atsame7xx-hal"
+version = "0.1.0"
+authors = ["Todd Stellanova <tstellanova@users.noreply.github.com>"]
+edition = "2018"
+
+
+
+[dependencies]
+cortex-m = ">=0.5.8,<0.7"
+cortex-m-rt = "0.6.10"
+nb = "0.1.2"
+atsame7xx-pac = {path="../atsame7xx-pac"}
+
+embedded-hal= {version = "0.2.3", features = ["unproven"]}
+
+[features]
+device-selected = []
+rt = ["atsame7xx-pac/rt"]
+same70q21b = ["atsame7xx-pac/atsame70q21b", "device-selected"]
